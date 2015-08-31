@@ -135,4 +135,4 @@ rule bowtie2_map_fasta:
         """
 
 # May be overruled in Snakefile if read files are fasta
-ruleorder: bowtie2_map > bowtie2_map_fasta
+#ruleorder: bowtie2_map > bowtie2_map_fasta

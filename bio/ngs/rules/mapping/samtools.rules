@@ -36,9 +36,9 @@ rule bam_sort:
     shell:
         """
         {config[samtools_rules][load_env]}
-        samtools sort {input} {wildcards.prefix}.sorted
+        samtools sort {input} $TMPDIR/`basename {wildcards.prefix}.sorted` 
+        cp $TMPDIR/`basename {output}` {output}
         """
-
 
 rule bam_sort_name:
     input:
